@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mysql_dev:
+    image: mysql:5.6
+    container_name: mysql_dev
+    environment:
+      MYSQL_ROOT_PASSWORD: helloworld
+      MYSQL_DATABASE: testapp
+    ports:
+      - "3308:3306"
+
+  admin:
+    image: adminer
+    container_name: admin_dev
+    ports:
+      - "8080:8080"
