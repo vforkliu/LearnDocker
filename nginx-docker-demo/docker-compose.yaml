@@ -1,9 +1,12 @@
-version "3"
+version: "3"
 services:
   nginx_demo:
     container_name: nginx_demo
     image: nginx:latest
     ports:
-      - "8080":"80"
+      - "8080:80"
     volumes:
-      - "$PWD/html":/usr/share/nginx/html
+      - "$PWD/html:/usr/share/nginx/html"
+      - "$PWD/conf/conf.d:/etc/nginx/conf.d"
+      # - "$PWD/certs:/etc/nginx/certs"
+      - "$PWD/logs:/var/log/nginx"
