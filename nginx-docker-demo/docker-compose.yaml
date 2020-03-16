@@ -1,0 +1,9 @@
+version "3"
+services:
+  nginx_demo:
+    container_name: nginx_demo
+    image: nginx:latest
+    ports:
+      - "8080":"80"
+    volumes:
+      - "$PWD/html":/usr/share/nginx/html
